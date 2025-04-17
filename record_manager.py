@@ -177,17 +177,55 @@ def generate_html_file(collection):
     html_content += "    <meta charset=\"UTF-8\">\n"
     html_content += "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
     html_content += "    <title>Record Collection</title>\n"
-    # You can add some basic styling here or link to an external stylesheet
+    # Add modern CSS styling
     html_content += "<style>\n"
-    html_content += "body { font-family: sans-serif; }\n"
-    html_content += "ul { list-style-type: none; padding: 0; }\n"
-    html_content += "li { margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }\n"
-    html_content += "strong { font-weight: bold; }\n"
+    html_content += "body {\n"
+    html_content += "    font-family: 'Arial', sans-serif;\n"  # More modern font
+    html_content += "    background-color: #f9f9f9;\n"  # Light background
+    html_content += "    margin: 0;\n"
+    html_content += "    padding: 0;\n"
+    html_content += "}\n"
+    html_content += "h1 {\n"
+    html_content += "    text-align: center;\n"
+    html_content += "    color: #333;\n"  # Darker heading color
+    html_content += "    padding: 20px 0;\n"
+    html_content += "    border-bottom: 1px solid #ddd;\n"
+    html_content += "}\n"
+    html_content += "ul {\n"
+    html_content += "    list-style-type: none;\n"
+    html_content += "    padding: 0;\n"
+    html_content += "    max-width: 800px;\n"  # Limit width for better readability
+    html_content += "    margin: 20px auto;\n"  # Center the list
+    html_content += "}\n"
+    html_content += "li {\n"
+    html_content += "    margin-bottom: 15px;\n"
+    html_content += "    padding-bottom: 15px;\n"
+    html_content += "    border-bottom: 1px solid #eee;\n"  # Lighter border
+    html_content += "    background-color: #fff;\n"  # White background for list items
+    html_content += "    padding: 15px;\n"
+    html_content += "    border-radius: 8px;\n"  # Rounded corners for items
+    html_content += "    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);\n"  # Subtle shadow
+    html_content += "    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;\n" # Smooth transition
+    html_content += "}\n"
+    html_content += "li:hover {\n"
+    html_content += "    transform: translateY(-4px);\n"  # Slight lift on hover
+    html_content += "    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n"  # Increased shadow on hover
+    html_content += "}\n"
+    html_content += "strong {\n"
+    html_content += "    font-weight: 600;\n"  # Use 600 for a slightly bolder look
+    html_content += "    color: #2c3e50;\n"  # Darker color for strong text
+    html_content += "}\n"
+    html_content += "p {\n"
+    html_content += "  text-align: center;\n"
+    html_content += "  font-size: 1.1em;\n"
+    html_content += "  color: #666;\n"
+    html_content += "  padding: 10px;\n"
+    html_content += "}\n"
     html_content += "</style>\n"
     html_content += "</head>\n"
     html_content += "<body>\n"
     html_content += "    <h1>My Record Collection</h1>\n"
-    html_content += generate_html_list(collection)  # Use the existing function
+    html_content += generate_html_list(collection)
     html_content += "</body>\n"
     html_content += "</html>\n"
     return html_content
@@ -228,7 +266,7 @@ def main():
         elif choice == '6':
             record_collection = sort_collection_by_artist(record_collection)
         elif choice == '7':
-            html_output = generate_html_file(record_collection) # Generate full HTML
+            html_output = generate_html_file(record_collection)
             save_html_file(html_output)
         elif choice == '8':
             save_collection(record_collection)
