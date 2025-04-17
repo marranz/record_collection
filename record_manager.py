@@ -2,6 +2,7 @@ import json
 import os
 
 DATABASE_FILE = "record_collection.json"
+HTML_FILE = "record_collection.html"  # Added HTML file name
 
 def load_collection():
     """Loads the record collection from the JSON file."""
@@ -149,6 +150,31 @@ def sort_collection_by_artist(collection):
     print("Collection sorted by artist name.")
     return sorted_collection
 
+def generate_html_list(collection):
+    """Generates an HTML list of the record collection."""
+    if not collection:
+        return "<p>Your collection is empty.</p>"
+
+    html_list = "<ul>\n"
+    for record in collection:
+        html_list += f"  <li>\n"
+        html_list += f"    <strong>Artist:</strong> {record['artist']}<br>\n"
+        html_list += f"    <strong>Album:</strong> {record['album']}<br>\n"
+        html_list += f"    <strong>Genre:</strong> {record['genre']}<br>\n"
+        html_list += f"    <strong>Year:</strong> {record['year']}<br>\n"
+        html_list += f"    <strong>Format:</strong> {record['format']}<br>\n"
+        if record['notes']:
+            html_list += f"    <strong>Notes:</strong> {record['notes']}<br>\n"
+        html_list += f"  </li>\n"
+    html_list += "</ul>\n"
+    return html_list
+
+def save_html_file(html_content):
+    """Saves the HTML content to a file."""
+    with open(HTML_FILE, "w") as f:
+        f.write(html_content)
+    print(f"HTML file saved to {HTML_FILE}")
+
 def main():
     """Main function to run the record collection manager."""
     record_collection = load_collection()
@@ -160,8 +186,9 @@ def main():
         print("3. Search Collection")
         print("4. Edit Record")
         print("5. Delete Record")
-        print("6. Sort Collection by Artist")  # Added option to sort
-        print("7. Save and Exit")
+        print("6. Sort Collection by Artist")
+        print("7. Generate HTML List")
+        print("8. Save and Exit")
 
         choice = input("Enter your choice: ").strip()
 
@@ -176,8 +203,11 @@ def main():
         elif choice == '5':
             delete_record(record_collection)
         elif choice == '6':
-            record_collection = sort_collection_by_artist(record_collection) # Sort and update
+            record_collection = sort_collection_by_artist(record_collection)
         elif choice == '7':
+            html_output = generate_html_list(record_collection)
+            save_html_file(html_output) # Save the HTML
+        elif choice == '8':
             save_collection(record_collection)
             break
         else:
