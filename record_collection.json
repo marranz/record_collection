@@ -5,7 +5,8 @@
         "genre": "Electronic",
         "year": "2025",
         "format": "LP",
-        "notes": "RSD 2025"
+        "notes": "RSD 2025",
+        "cover_path": "/Users/mijack/Documents/git/record_collection/covers/Air_Moon_Safari_Live_&_Demos.jpg"
     },
     {
         "artist": "David Gilmour with Romany Gilmour",
@@ -13,7 +14,8 @@
         "genre": "rock",
         "year": "2025",
         "format": "LP",
-        "notes": "RSD 2025"
+        "notes": "RSD 2025",
+        "cover_path": "/Users/mijack/Documents/git/record_collection/covers/David_Gilmour_with_Romany_Gilmour_Between_Two_Points.jpg"
     },
     {
         "artist": "Pixies",
@@ -21,7 +23,8 @@
         "genre": "indie",
         "year": "2025",
         "format": "LP",
-        "notes": "RSD 2025"
+        "notes": "RSD 2025",
+        "cover_path": "/Users/mijack/Documents/git/record_collection/covers/Pixies_Bossanova__Trompe_Le_Monde_-_live.jpg"
     },
     {
         "artist": "The House Of Love",
@@ -29,7 +32,8 @@
         "genre": "indie",
         "year": "2025",
         "format": "LP",
-        "notes": "RSD 2025"
+        "notes": "RSD 2025",
+        "cover_path": null
     },
     {
         "artist": "The Jesus And Mary Chain",
@@ -37,7 +41,8 @@
         "genre": "indie",
         "year": "2025",
         "format": "LP",
-        "notes": "RSD 2025"
+        "notes": "RSD 2025",
+        "cover_path": null
     },
     {
         "artist": "VVAA",
@@ -46,5 +51,14 @@
         "year": "2025",
         "format": "LP",
         "notes": "RSD 2025"
+    },
+    {
+        "artist": "michael jackson",
+        "album": "bad",
+        "genre": "pop",
+        "year": "1987",
+        "format": "LP",
+        "notes": "",
+        "cover_path": null
     }
 ]

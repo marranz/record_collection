@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}Edit Record{% endblock %}
+
+{% block content %}
+    <h2>Edit Record: {{ record.artist }} - {{ record.album }}</h2>
+
+    {% if record.cover_path and record.cover_path != 'None' %}
+        {% set cover_filename = record.cover_path %}
+        <img src="{{ covers_prefix }}{{ cover_filename }}" alt="{{ record.album }} Cover" width="150" style="margin-bottom: 1em; border: 1px solid #ccc;">
+    {% endif %}
+
+    <form method="post" class="record-form">
+        <div>
+            <label for="artist">Artist:</label>
+            <input type="text" id="artist" name="artist" value="{{ record.artist  }}" required>
+        </div>
+        <div>
+            <label for="album">Album:</label>
+            <input type="text" id="album" name="album" value="{{ record.album  }}" required>
+        </div>
+        <div>
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" value="{{ record.genre  }}">
+        </div>
+        <div>
+            <label for="year">Year:</label>
+            <input type="text" id="year" name="year" value="{{ record.year  }}">
+        </div>
+        <div>
+            <label for="format">Format:</label>
+            <input type="text" id="format" name="format" value="{{ record.format }}">
+        </div>
+        <div>
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes">{{ record.notes  }}</textarea>
+        </div>
+        <hr>
+        <div>
+            <label for="manage_cover">
+                <input type="checkbox" id="manage_cover" name="manage_cover" value="yes">
+                Attempt automatic cover download/update? (Overrides manual URL if successful)
+            </label>
+        </div>
+         <div>
+            <label for="manual_cover_url">Manual Cover URL:</label>
+            <input type="url" id="manual_cover_url" name="manual_cover_url" placeholder="http://example.com/cover.jpg">
+             <small>(Takes precedence over automatic download)</small>
+        </div>
+        <hr>
+        <button type="submit">Update Record</button>
+        <a href="/" class="button cancel">Cancel</a>
+    </form>
+{% endblock %}

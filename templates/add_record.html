@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Add Record{% endblock %}
+
+{% block content %}
+    <h2>Add New Record</h2>
+    <form method="post" class="record-form">
+        <div>
+            <label for="artist">Artist:</label>
+            <input type="text" id="artist" name="artist" value="{{ form_data.get('artist', '') }}" required>
+        </div>
+        <div>
+            <label for="album">Album:</label>
+            <input type="text" id="album" name="album" value="{{ form_data.get('album', '') }}" required>
+        </div>
+        <div>
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" value="{{ form_data.get('genre', '') }}">
+        </div>
+        <div>
+            <label for="year">Year:</label>
+            <input type="text" id="year" name="year" value="{{ form_data.get('year', '') }}">
+        </div>
+        <div>
+            <label for="format">Format:</label>
+            <input type="text" id="format" name="format" value="{{ form_data.get('format', '') }}">
+        </div>
+        <div>
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes">{{ form_data.get('notes', '') }}</textarea>
+        </div>
+        <button type="submit">Add Record</button>
+        <a href="{{ url_for('index') }}" class="button cancel">Cancel</a>
+    </form>
+{% endblock %}

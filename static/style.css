@@ -1,0 +1,153 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    color: #666;
+}
+
+/* Flash Messages */
+.flash-messages {
+    margin-bottom: 1rem;
+    padding: 0;
+    list-style: none;
+}
+.flash {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+.flash.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.flash.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.flash.info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+.flash.warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+
+/* Record List */
+.record-list {
+    list-style: none;
+    padding: 0;
+}
+.record-list li {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow: hidden; /* Contain floats */
+}
+.record-list strong {
+    display: inline-block;
+    min-width: 60px;
+}
+
+/* Forms */
+.record-form div {
+    margin-bottom: 0.8rem;
+}
+.record-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+.record-form input[type="text"],
+.record-form input[type="url"],
+.record-form textarea {
+    width: 95%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.record-form textarea {
+    min-height: 80px;
+}
+.record-form input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+/* Buttons */
+button, .button {
+    display: inline-block;
+    background: #5cb85c;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    vertical-align: middle; /* Align buttons nicely */
+}
+button:hover, .button:hover {
+    opacity: 0.9;
+}
+.button.edit {
+    background: #f0ad4e;
+}
+.button.delete, .button.delete-cover {
+    background: #d9534f;
+}
+.button.cancel {
+    background: #777;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 1.5rem 0;
+}
