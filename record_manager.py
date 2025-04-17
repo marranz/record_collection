@@ -2,7 +2,7 @@ import json
 import os
 
 DATABASE_FILE = "record_collection.json"
-HTML_FILE = "record_collection.html"  # Added HTML file name
+HTML_FILE = "record_collection.html"
 
 def load_collection():
     """Loads the record collection from the JSON file."""
@@ -169,6 +169,29 @@ def generate_html_list(collection):
     html_list += "</ul>\n"
     return html_list
 
+def generate_html_file(collection):
+    """Generates a complete HTML file of the record collection."""
+    html_content = "<!DOCTYPE html>\n"
+    html_content += "<html lang=\"en\">\n"
+    html_content += "<head>\n"
+    html_content += "    <meta charset=\"UTF-8\">\n"
+    html_content += "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+    html_content += "    <title>Record Collection</title>\n"
+    # You can add some basic styling here or link to an external stylesheet
+    html_content += "<style>\n"
+    html_content += "body { font-family: sans-serif; }\n"
+    html_content += "ul { list-style-type: none; padding: 0; }\n"
+    html_content += "li { margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }\n"
+    html_content += "strong { font-weight: bold; }\n"
+    html_content += "</style>\n"
+    html_content += "</head>\n"
+    html_content += "<body>\n"
+    html_content += "    <h1>My Record Collection</h1>\n"
+    html_content += generate_html_list(collection)  # Use the existing function
+    html_content += "</body>\n"
+    html_content += "</html>\n"
+    return html_content
+
 def save_html_file(html_content):
     """Saves the HTML content to a file."""
     with open(HTML_FILE, "w") as f:
@@ -187,7 +210,7 @@ def main():
         print("4. Edit Record")
         print("5. Delete Record")
         print("6. Sort Collection by Artist")
-        print("7. Generate HTML List")
+        print("7. Generate HTML File")
         print("8. Save and Exit")
 
         choice = input("Enter your choice: ").strip()
@@ -205,8 +228,8 @@ def main():
         elif choice == '6':
             record_collection = sort_collection_by_artist(record_collection)
         elif choice == '7':
-            html_output = generate_html_list(record_collection)
-            save_html_file(html_output) # Save the HTML
+            html_output = generate_html_file(record_collection) # Generate full HTML
+            save_html_file(html_output)
         elif choice == '8':
             save_collection(record_collection)
             break
